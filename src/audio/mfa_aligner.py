@@ -196,7 +196,9 @@ class MFAAligner:
             str(self.acoustic_model), # Acoustic model
             str(output_dir),         # Output directory
             "--clean",               # Clean previous runs
-            "--single_speaker"       # Assume single speaker per file
+            "--single_speaker",      # Assume single speaker per file
+            "--beam", "100",         # Increase beam width for more alignment tolerance
+            "--retry_beam", "400"    # Increase retry beam for difficult cases
         ]
 
         logger.debug(f"Running MFA command: {' '.join(cmd)}")
