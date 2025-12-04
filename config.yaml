@@ -1,0 +1,123 @@
+# PII De-Identification Pipeline Configuration
+
+# Dataset settings
+dataset:
+  name: "Appenlimited/1000h-us-english-smartphone-conversation"
+  sample_size: 50  # Number of conversations to process (NOTE: Ignored by pipeline, use --limit flag instead)
+
+# Fake PII categories for de-identification
+pii_categories:
+  days:
+    items:
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+      - Sunday
+    tag: "[DAY]"
+
+  months:
+    items:
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
+    tag: "[MONTH]"
+
+  colors:
+    items:
+      - red
+      - blue
+      - green
+      - yellow
+      - orange
+      - purple
+      - pink
+      - brown
+      - black
+      - white
+      - gray
+      - grey
+    tag: "[COLOR]"
+
+  cities:
+    items:
+      - Denver
+      - Seattle
+      - Portland
+      - Austin
+      - Boston
+      - Chicago
+      - Houston
+      - Phoenix
+      - Philadelphia
+      - San Antonio
+      - San Diego
+      - Dallas
+      - San Jose
+      - Atlanta
+      - Miami
+      - Los Angeles
+      - New York
+      - San Francisco
+    tag: "[CITY]"
+
+  states:
+    items:
+      - Utah
+      - Texas
+      - California
+      - Florida
+      - New York
+      - Pennsylvania
+      - Illinois
+      - Ohio
+      - Georgia
+      - North Carolina
+      - Michigan
+      - Washington
+      - Oregon
+      - Colorado
+      - Arizona
+      - Massachusetts
+    tag: "[STATE]"
+
+# Output settings
+output:
+  version: "2025-12-02_v1"
+  audio_format: "flac"
+  metadata_format: "parquet"
+
+# QA settings
+qa:
+  spot_check_samples: 10
+  min_confidence: 0.95
+
+# Montreal Forced Aligner (MFA) settings
+# Used for word-level audio-transcript alignment
+mfa:
+  # Acoustic model for alignment (download via: mfa model download acoustic english_mfa)
+  acoustic_model: "english_mfa"
+
+  # Pronunciation dictionary (download via: mfa model download dictionary english_mfa)
+  dictionary: "english_mfa"
+
+  # Temporary directory for MFA working files (null = use system temp)
+  temp_dir: null
+
+  # Clean up temporary files after alignment
+  cleanup: true
+
+  # Note: You can override these settings with environment variables:
+  # - MFA_ACOUSTIC_MODEL
+  # - MFA_DICTIONARY

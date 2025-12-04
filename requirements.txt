@@ -1,0 +1,28 @@
+# Core dependencies
+huggingface-hub>=0.17.0
+pandas>=2.0.0
+numpy>=1.24.0
+pyarrow>=12.0.0
+
+# Audio processing
+soundfile>=0.12.0
+librosa>=0.10.0
+pydub>=0.25.0
+
+# Forced alignment for word-level timestamps
+aeneas>=1.7.3
+
+# Utilities
+tqdm>=4.65.0
+pyyaml>=6.0.0
+python-dateutil>=2.8.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Optional: For advanced audio de-identification
+# torch>=2.0.0
+# transformers>=4.30.0
+# openai-whisper>=20230314
+streamlit>=1.28.0
