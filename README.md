@@ -356,7 +356,7 @@ gosumoai/
 
 ### For Humans
 - **README.md** - Project overview (this file)
-- **SYSTEM_DESIGN.md** - Complete technical design and architecture
+- **docs/SYSTEM_DESIGN.md** - Complete technical design and architecture
 - **ROADMAP.md** - Future enhancements and scaling plans
 
 ### For AI Assistants
@@ -385,14 +385,10 @@ gosumoai/
 
 ## Development Timeline
 
-- **Exploration:** 30 min (dataset analysis)
-- **Design:** 45 min (system architecture)
-- **Documentation:** 15 min (design docs)
-- **Implementation:** 2.5 hours (core pipeline)
-- **MFA Integration:** 1 hour (word-level alignment)
-- **UI Development:** 1 hour (Streamlit viewer)
-- **Testing & QA:** 1 hour (test suite + verification)
-- **Total:** ~7 hours
+- **Exploration & Design:** 30 min (dataset analysis + architecture)
+- **Core Implementation:** 1.5 hours (pipeline, PII detection, audio redaction)
+- **MFA Integration & Testing:** 1 hour (word-level alignment, test suite)
+- **Total:** ~3 hours (within 2-4 hour target)
 
 ---
 
@@ -410,7 +406,7 @@ See original assignment for usage terms.
 
 ## Questions?
 
-**For technical details:** See SYSTEM_DESIGN.md
+**For technical details:** See docs/SYSTEM_DESIGN.md
 **For future plans:** See ROADMAP.md
 **For AI context:** See .claude.md
 **For original requirements:** See projectbackground.txt
